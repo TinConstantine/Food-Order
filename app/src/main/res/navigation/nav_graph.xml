@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/introPage">
+
+    <fragment
+        android:id="@+id/introPage"
+        android:name="com.example.orderfood.screens.Intro.IntroPage.IntroPage"
+        android:label="fragment_intro_page"
+        tools:layout="@layout/fragment_intro_page">
+        <action
+            android:id="@+id/action_introPage_to_loginPage"
+            app:destination="@id/loginPage"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_introPage_to_signupPage"
+            app:destination="@id/signupPage"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_introPage_to_dashboardPage"
+            app:destination="@id/dashboardPage"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginPage"
+        android:name="com.example.orderfood.screens.Intro.LoginPage.LoginPage"
+        android:label="fragment_login_page"
+        tools:layout="@layout/fragment_login_page">
+        <action
+            android:id="@+id/action_loginPage_to_signupPage"
+            app:destination="@id/signupPage"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_loginPage_to_dashboardPage"
+            app:destination="@id/dashboardPage"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupPage"
+        android:name="com.example.orderfood.screens.Intro.SignupPage.SignupPage"
+        android:label="fragment_signup_page"
+        tools:layout="@layout/fragment_signup_page">
+        <action
+            android:id="@+id/action_signupPage_to_loginPage"
+            app:destination="@id/loginPage"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashboardPage"
+        android:name="com.example.orderfood.screens.Dashboard.DashboardPage.DashboardPage"
+        android:label="fragment_dashboard_page"
+        tools:layout="@layout/fragment_dashboard_page">
+        <action
+            android:id="@+id/action_dashboardPage_to_listFoodPage"
+            app:destination="@id/listFoodPage"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_dashboardPage_to_introPage"
+            app:destination="@id/introPage"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_dashboardPage_to_cartPage"
+            app:destination="@id/cartPage"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_dashboardPage_to_detailFoodPage"
+            app:destination="@id/detailFoodPage"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFoodPage"
+        android:name="com.example.orderfood.screens.ListFood.ListFoodPage.ListFoodPage"
+        android:label="fragment_list_food_page"
+        tools:layout="@layout/fragment_list_food_page">
+    <argument
+        android:name="categoryId"
+        app:argType="integer"/>
+    <argument
+        android:name="categoryName"
+        app:argType="string"
+        app:nullable="true" />
+    <argument
+        android:name="searchText"
+        app:argType="string"
+        app:nullable="true" />
+        <action
+            android:id="@+id/action_listFoodPage_to_detailFoodPage"
+            app:destination="@id/detailFoodPage"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFoodPage"
+        android:name="com.example.orderfood.screens.ListFood.DetailFood.DetailFoodPage"
+        android:label="fragment_detail_food_page"
+        tools:layout="@layout/fragment_detail_food_page" >
+        <argument android:name="foodModel" app:argType="com.example.orderfood.models.FoodModel" app:nullable="false"/>
+        <action
+            android:id="@+id/action_detailFoodPage_to_listFoodPage"
+            app:destination="@id/listFoodPage"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartPage"
+        android:name="com.example.orderfood.screens.Cart.CartPage.CartPage"
+        android:label="fragment_cart_page"
+        tools:layout="@layout/fragment_cart_page" >
+        <action
+            android:id="@+id/action_cartPage_to_dashboardPage"
+            app:destination="@id/dashboardPage"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+</navigation>
